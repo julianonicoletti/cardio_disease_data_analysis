@@ -117,21 +117,54 @@ with tab1:
 
 with tab2:
     st.markdown('### Há relação direta entre idade e incidência de problemas cardíacos?')
-    st.image('pages/images/age-cardio.png',width=950)
+    st.image('pages/images/age-cardio.png',width=850)
     st.markdown('##### **SIM**. Os dados mostram que há uma relação direta entre idade e incidência de Doenças Cardiovasculares.')
     st.markdown('---')
     
     st.markdown('### Há relação direta entre pressão arterial e problemas cardiovasculares?')
-    st.image('pages/images/ap_lo_ap_hi-cardio.png', width=1180)
+    st.image('pages/images/ap_lo_ap_hi-cardio.png', width=850)
     st.markdown('##### **SIM**. Verifica-se que em ambas as pressões a mediana é bem maior no grupo com doença cardiovascular.')
     st.markdown('---')
     
     st.markdown('### Há uma relação direta entre o BMI (Body Index Mass) e problemas cardíacos?')
-    col1, col2 = st.columns([1.5, 1])
+    col1, col2 = st.columns(2)
     with col1:
-        st.image('pages/images/bmi_cardio.png', width=800)
+        plt.figure(figsize=(8,7)) 
+        plt.rcParams.update({'font.size': 11}) 
+        ax = sns.boxplot(data=df, hue='cardio', y='bmi', palette='muted')
+        # Ajuste manual da legenda
+        handles, labels = ax.get_legend_handles_labels()
+        colors = sns.color_palette('muted', len(labels))
+
+        # Mapeamento de rótulos
+        label_map = {'0': 'Não', '1': 'Sim'}  
+
+        # Criando legenda personalizada
+        custom_labels = [label_map.get(label, label) for label in labels]
+        custom_handles = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color, markersize=10) for color in colors]
+        ax.legend(custom_handles, custom_labels, title='Evento Cardíaco')
+        plt.title('BMI distribuition by Cardiovascular Disease')
+        st.pyplot(plt)
     with col2:
-        st.image('pages/images/bmi_cardio2.png', width=530)
+        plt.figure(figsize=(8,7)) 
+        plt.rcParams.update({'font.size': 11}) 
+        ax = sns.violinplot(data=df, x="gender", y="bmi", hue="cardio",split=True, inner="quart", fill=True, palette='muted')
+       
+        handles, labels = ax.get_legend_handles_labels()
+        colors = sns.color_palette('muted', len(labels))
+
+        label_map = {'0': 'Não', '1': 'Sim'}  
+
+        custom_labels = [label_map.get(label, label) for label in labels]
+        custom_handles = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color, markersize=10) for color in colors]
+
+        ax.legend(custom_handles, custom_labels, title='Cardio Disease')
+        ax.set_xticks([0, 1])
+        ax.set_xticklabels(['Women', 'Man'])
+        ax.set_xlabel('')
+        ax.set_ylabel('Body Index Mass (BMI)')
+        ax.set_title('Distribuition of BMI by Age and Cardio Disease')
+        st.pyplot(plt)
     st.markdown('##### **SIM**. Verifica-se que há uma mediana e distribuição mais elevados no valor de BMI no grupo ' 
                 'com doença cardiovascular.')
     st.markdown('---')
@@ -139,7 +172,15 @@ with tab2:
     st.markdown('### Há uma relação direta entre o colesterol sanguíneo e problemas cardíacos?')
     col1, col2 = st.columns(2)
     with col1:
-        st.image('pages/images/colesterol.png', width=700)
+        plt.figure(figsize=(8,7)) 
+        plt.rcParams.update({'font.size': 12})
+        ax = sns.barplot(x='cholesterol', y='cardio', data=df, palette='muted')
+        ax.set_xticks([0, 1, 2])
+        ax.set_xticklabels(['Normal', 'Above Normal', 'Well Above Normal'])
+        ax.set_xlabel('Cholesterol')
+        ax.set_ylabel('Mean of Cardio Disease')
+        ax.set_title('Distribuition of Cardio Disease by Cholesterol Level')
+        st.pyplot(plt)
     with col2:
         st.markdown("<br><br><br><br>", unsafe_allow_html=True)
         st.markdown('#### **SIM**. Há uma relação direta entre o nível de colesterol e a média de acometidos por Doença Cardiovascular')

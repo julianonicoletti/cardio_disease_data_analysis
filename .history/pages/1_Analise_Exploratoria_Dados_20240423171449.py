@@ -139,7 +139,7 @@ with tab2:
     st.markdown('### Há uma relação direta entre o colesterol sanguíneo e problemas cardíacos?')
     col1, col2 = st.columns(2)
     with col1:
-        st.image('pages/images/colesterol.png', width=700)
+        st.image()
     with col2:
         st.markdown("<br><br><br><br>", unsafe_allow_html=True)
         st.markdown('#### **SIM**. Há uma relação direta entre o nível de colesterol e a média de acometidos por Doença Cardiovascular')

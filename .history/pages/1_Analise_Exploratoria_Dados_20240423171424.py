@@ -139,7 +139,15 @@ with tab2:
     st.markdown('### Há uma relação direta entre o colesterol sanguíneo e problemas cardíacos?')
     col1, col2 = st.columns(2)
     with col1:
-        st.image('pages/images/colesterol.png', width=700)
+        plt.figure(figsize=(8,7)) 
+        plt.rcParams.update({'font.size': 12})
+        ax = sns.barplot(x='cholesterol', y='cardio', data=df, palette='muted')
+        ax.set_xticks([0, 1, 2])
+        ax.set_xticklabels(['Normal', 'Above Normal', 'Well Above Normal'])
+        ax.set_xlabel('Cholesterol')
+        ax.set_ylabel('Mean of Cardio Disease')
+        ax.set_title('Distribuition of Cardio Disease by Cholesterol Level')
+        st.pyplot(plt)
     with col2:
         st.markdown("<br><br><br><br>", unsafe_allow_html=True)
         st.markdown('#### **SIM**. Há uma relação direta entre o nível de colesterol e a média de acometidos por Doença Cardiovascular')
