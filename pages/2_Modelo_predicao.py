@@ -33,7 +33,7 @@ Explore os dashboards e preveja sua chance de desenvolver doenças cardiovascula
 st.sidebar.download_button(
     label='Download dos dados originais',
     data=csv_original,
-    file_name='cardio_disease_final.csv',
+    file_name='cardio_disease_original.csv',
     mime='text/csv',
     type='primary'
     
