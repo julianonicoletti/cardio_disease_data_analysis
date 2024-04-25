@@ -63,7 +63,7 @@ Ao relacionar as variáveis númericas com a variável-alvo (target) chegamos a 
 
 ![alt text](images/image-7.png)
 
-![alt text](images/image-8.png)
+![alt text](images/image-20.png)
 
 Veja que na maioria das colunas os valores médios para o grupo com doença cardíaca é maior (bem representado pela linha dentro do quadrado, que indica a mediana da amostra). Com destaque para a coluna ap_lo (pressão arterial sistólica) que deixa de ter outliers superiores pelo aumento da média e mediana.
 
