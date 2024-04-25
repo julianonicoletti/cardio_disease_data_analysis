@@ -89,7 +89,9 @@ O gráfico abaixo evidencia esse fato, usando um “violinplot” da distribuiç
 ![alt text](images/image-12.png)
 
 Há uma relação direta. Tanto nesse gráfico de distribuição como no violinplot abaixo vemos uma concentração de valores maiores de BMI para o grupo com DCV.
+
 ![alt text](images/image-13.png)
+
 O que também chama a atenção no gráfico acima é o violinplot mais “alongado superiormente” para o grupo Mulher, mostrando maior quantidade de valores altos de BMI (> 40) do que no grupo Homem.
 
 
