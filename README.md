@@ -1,7 +1,8 @@
 # Análise Exploratória de Dados de Marcadores de Problemas Cardiovasculares
+![alt text](images/image2.jpg)
 
 # Resumo
-Através de uma base de dados pública e usando de técnicas de analise de dados como ETL, conseguimos indicar quais fatores tem relação com o desenvolvimento de problemas cardiovasculares. Analisando as variáveis em contexto conseguimos responder a algumas perguntas comum nesse tipo de ensaio. 
+Através de uma base de dados pública e usando de técnicas de analise de dados como ETL, conseguimos indicar quais fatores tem relação com o desenvolvimento de problemas cardiovasculares. Analisando as variáveis em contexto conseguimos responder a algumas perguntas comuns nesse tipo de ensaio. 
 
 # 1. O Problema
 Doenças cardiovasculares (DCV) são um grupo de doenças do coração e dos vasos sanguíneos, onde são exemplos o infarto, arritmia, Acidente Vascular Cerebral, Insuficiência cardíaca entre outros.
